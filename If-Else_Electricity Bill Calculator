@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    float unit , bill, flag=1;
+    scanf("%f", &unit);
+    
+    if(unit < 0){
+        flag=0;
+    }
+    
+    if(unit >= 0 && unit <= 100 ){
+        bill = unit * 5;
+    }
+    
+    else if(unit > 100 && unit <= 300 ){
+        bill = 500+  (unit-100) * 7;
+    }
+    
+    else if(unit > 300 ){
+        bill = 1900 + (unit-300) * 10;
+    }
+    
+    
+    if(bill <= 1200){
+        bill = bill - (0.1 * bill) ;
+    }
+    
+    if(flag){
+        printf("The electricity bill is: %.2f.", bill);
+    }
+    else{
+        printf("Invalid Input!");
+    }
+    
+    
+    return 0;
+}
