@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int stick1, stick2, stick3;
+    scanf("%d %d %d", &stick1, &stick2, &stick3);
+    
+    printf("Lengths: [%d, %d, %d]\n", stick1, stick2, stick3);
+    
+    if(((stick1+stick2)>stick3) && ((stick3+stick2)>stick1) && ((stick1+stick3)>stick2) )
+    {
+        
+        if(stick1==stick2 && stick1==stick3){
+            printf("Type: Equilateral\nAll sides are of the same length.\n");
+        }
+        
+        else if((stick1==stick2  && stick1!=stick3) || 
+                (stick3==stick2 && stick3!=stick1) || (stick1 == stick3 && stick1!=stick2)){
+            printf("Type: Isosceles\nExactly two sides are equal.");
+        }
+        
+        else if((stick1!=stick2)!=stick3){
+            printf("Type: Scalene\nAll sides are of different lengths.");
+        }
+    }
+    
+    else{
+        printf("Type: Invalid\nCannot form a valid shape.");
+    }
+    
+    
+    return 0;
+}
