@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    
+    int hardness, tensstren, grade, flag;
+    float carbcon;
+    
+    scanf("%d", & hardness);
+    scanf("%f", & carbcon);
+    scanf("%d", & tensstren);
+    
+    if(hardness>50 && carbcon<0.7 && tensstren>5600){
+        grade = 10;
+        flag=3;
+    }
+    else if(hardness>50 && carbcon<0.7 ){
+        grade = 9;
+        flag=2;
+    }
+    
+    else if(carbcon<0.7 && tensstren>5600){
+        grade = 8;
+        flag=2;
+    }
+    
+    else if(hardness>50 && tensstren>5600){
+        grade = 7;
+        flag=2;
+    }
+    
+    else if(hardness>50 || carbcon<0.7 || tensstren>5600){
+        grade = 6;
+        flag=1;
+    }
+    
+    else{
+        grade = 5;
+        flag=0;
+    }
+    
+    printf("The grade of the steel is: %d\n", grade);
+    
+    
+    if(flag==3){
+        printf("All of the conditions met.");
+    }
+    
+    else if(flag==2){
+        printf("Two conditions met.");
+    }
+    
+    else if(flag==1){
+        printf("Only one condition met.");
+    }
+    
+    else if(flag==0){
+        printf("None of the conditions met.");
+    }
+    
+    return 0;
+}
