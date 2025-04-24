@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int year, month;
+    scanf("%d", &month);
+    scanf("%d", &year);
+    
+    if(month<1 || month>12){
+        printf("Invalid Month\n");
+    }
+    if(year<1){
+        printf("Invalid Year");
+    }
+    
+    
+    if(month>0 && month <13 && year>0){
+        switch (month){
+        case 1: 
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            printf("31\n");
+            break;
+            
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            printf("30\n");
+    }
+    
+    if (year % 4 == 0 && month== 2){
+        if(year % 100 == 0 && year % 400==0 ){
+            printf("29\n");
+        }
+        else if(year % 100 != 0){
+            printf("29\n");
+        }
+        else{
+            printf("28\n");
+        }
+    }
+    else if (year % 4 != 0 && month==2){
+        printf("28\n");
+    }
+    }
+ 
+    return 0;
+}
